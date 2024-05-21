@@ -23,6 +23,9 @@ jobs:
       - name: install maven
         run: sudo apt-get install maven -y
 
+      - name: Change directory to the project root
+        run: cd api
+
       - name: Build with Maven
         run: mvn clean install
 
