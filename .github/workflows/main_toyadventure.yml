@@ -16,10 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java version
-        uses: actions/setup-java@v1
-        with:
-          java-version: 'java21'
+      - name: Download Java with 21
+        run: sudo apt-get install openjdk-21-jdk
+
+
+      - name: install maven
+        run: sudo apt-get install maven -y
 
       - name: Build with Maven
         run: mvn clean install
